@@ -1,0 +1,65 @@
+h1 {
+  margin: 0;
+  height: 3rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 20px;
+  height: calc(100% - 3rem);
+}
+
+#arena {
+  display: grid;
+  grid-template-rows: repeat(4, auto) 1fr auto;
+  border-right: 1px solid #EEE;
+  padding-right: 8px;
+}
+
+
+button#commit {
+  height: 50px;
+  margin-top: 20px;
+  align-self: flex-end;
+}
+
+.board {
+  display: grid;
+  --cell-size: 70px;
+  --cell-fs: 25px;
+  grid-template-columns: repeat(3, var(--cell-size));
+  grid-template-rows: repeat(3, var(--cell-size));
+}
+
+.board.board--small {
+  --cell-size: 20px;
+  --cell-fs: 10px;
+}
+
+button.proposed {
+  background-color: lightskyblue;
+}
+
+.board button {
+  font-family: monospace;
+  font-size: var(--cell-fs);
+}
+
+#inspector {
+  height: calc(100vh - 4rem);
+  overflow-y: scroll;
+}
+
+.inspector__node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inspector__children {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
